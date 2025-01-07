@@ -1,8 +1,7 @@
-
 server:
-  port: 8080 
+  port: 8080
   servlet:
-     context-path: /identify
+    context-path: /identify
 
 
 
@@ -11,7 +10,15 @@ spring:
     url: "jdbc:mysql://localhost:3306/identify-service"
     username: root
     password: root
-jpa:
-  hibernate:
-    ddl-auto: update
-  show-sql: true
+  jpa:
+    hibernate:
+      ddl-auto: update
+    show-sql: true
+logging:
+  level:
+    org.hibernate.SQL: DEBUG
+    org.hibernate.type.descriptor.sql.BasicBinder: TRACE
+
+
+jwt:
+  signerKey: "FpG5Qty7RiJdgZvxtMmwdEx/B1VysAWotu7Bgks2oTXCFvitcfYI1KeTHovA3Fx+"

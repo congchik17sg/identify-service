@@ -1,22 +1,17 @@
 package com.example.indentify_service.dto.request;
 
+
 import lombok.*;
 import lombok.experimental.FieldDefaults;
 
-import java.time.LocalDate;
-
-
-@Data
+@Data // = getter va setter....
 @Builder
-@AllArgsConstructor
 @NoArgsConstructor
+@AllArgsConstructor
 @FieldDefaults(level = AccessLevel.PRIVATE)
+public class AuthenticationRequest {
 
-public class UserUpdateRequest {
-
-     String password;
-     String firstName;
-     String lastName;
-     LocalDate dob;
+    String username;
+    String password;
 
 }

@@ -1,26 +1,29 @@
-package com.example.indentify_service.dto.request;
+package com.example.indentify_service.dto.response;
 
-import jakarta.validation.constraints.Size;
+import com.fasterxml.jackson.annotation.JsonFormat;
 import lombok.*;
 import lombok.experimental.FieldDefaults;
 
 import java.time.LocalDate;
+import java.util.Set;
 
-//@Getter
-//@Setter
+
 @Data // = getter va setter....
 @Builder
 @NoArgsConstructor
 @AllArgsConstructor
 @FieldDefaults(level = AccessLevel.PRIVATE)
-public class UserCreationRequest {
-    @Size(min = 2, message = "USERNAME_UNVALID")
+
+public class UserResponse {
+
+    String id;
+
     String username;
-    @Size(min = 8, message = "PASSWORD_UNVALID")
-    String password;
+    //    String password;
     String firstName;
     String lastName;
+    @JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "yyyy-MM-dd")
     LocalDate dob;
-
+    Set<String> roles;
 
 }
